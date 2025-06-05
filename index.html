@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>End of School Countdown</title>
+  <title>Start of School Countdown</title>
   <style>
     :root {
       --bg-color: #0f172a;
@@ -70,7 +70,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Countdown to the End of School!</h1>
+    <h1>Countdow to the Start of School!</h1>
     <div class="countdown" id="countdown">
       <div class="time">
         <span id="days">0</span>
@@ -93,12 +93,12 @@
 
   <script>
     const countdown = () => {
-      const endDate = new Date('June 4, 2025 10:30:00').getTime();
+      const endDate = new Date('August 8, 2025 8:30:00').getTime();
       const now = new Date().getTime();
       const distance = endDate - now;
 
       if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "School's out! 🎉";
+        document.getElementById("countdown").innerHTML = "Summers Over 😢";
         return;
       }
 
