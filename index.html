@@ -6,17 +6,17 @@
   <title>Start of School Countdown</title>
   <style>
     :root {
-      --bg-color: #0f172a;
-      --text-color: #e2e8f0;
-      --accent-color: #38bdf8;
-      --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --bg-color: #fef3c7; /* light yellow */
+      --text-color: #1e293b; /* dark blue-gray */
+      --accent-color: #f59e0b; /* bright orange-yellow */
+      --font-main: 'Comic Sans MS', 'Segoe UI', cursive, sans-serif;
     }
 
     body {
       margin: 0;
       padding: 0;
       height: 100vh;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      background: linear-gradient(135deg, #fcd34d, #60a5fa); /* sun to sky */
       color: var(--text-color);
       display: flex;
       align-items: center;
@@ -27,16 +27,17 @@
 
     .container {
       text-align: center;
-      background-color: rgba(15, 23, 42, 0.7);
+      background-color: rgba(255, 255, 255, 0.7);
       padding: 3rem;
       border-radius: 2rem;
-      box-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+      box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
     }
 
     h1 {
       font-size: 2.5rem;
       color: var(--accent-color);
       margin-bottom: 2rem;
+      animation: glow 2s infinite;
     }
 
     .countdown {
@@ -54,7 +55,7 @@
 
     .label {
       font-size: 1rem;
-      color: #94a3b8;
+      color: #3b82f6; /* sky blue */
       margin-top: 0.3rem;
     }
 
@@ -62,15 +63,11 @@
       0%, 100% { text-shadow: 0 0 10px var(--accent-color); }
       50% { text-shadow: 0 0 20px var(--accent-color); }
     }
-
-    h1 {
-      animation: glow 2s infinite;
-    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Countdow to the Start of School!</h1>
+    <h1>🌞 Countdown to the Start of School! 🌴</h1>
     <div class="countdown" id="countdown">
       <div class="time">
         <span id="days">0</span>
@@ -98,7 +95,7 @@
       const distance = endDate - now;
 
       if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "Summers Over 😢";
+        document.getElementById("countdown").innerHTML = "🌅 Summer's Over 😢";
         return;
       }
 
@@ -118,3 +115,4 @@
   </script>
 </body>
 </html>
+
