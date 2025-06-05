@@ -3,48 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Start of School Countdown</title>
+  <title>Summer Countdown</title>
   <style>
     :root {
-      --bg-color: #fef3c7; /* light yellow */
-      --text-color: #1e293b; /* dark blue-gray */
-      --accent-color: #f59e0b; /* bright orange-yellow */
-      --font-main: 'Comic Sans MS', 'Segoe UI', cursive, sans-serif;
+      --primary-color: #34d399; /* teal */
+      --secondary-color: #3b82f6; /* blue */
+      --background-color: #fff;
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #fcd34d, #60a5fa); /* sun to sky */
-      color: var(--text-color);
+      font-family: var(--font-family);
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-main);
-      overflow: hidden;
+      height: 100vh;
     }
 
     .container {
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #1e3a8a;
       padding: 3rem;
-      border-radius: 2rem;
-      box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
+      border-radius: 1.5rem;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
     }
 
     h1 {
       font-size: 2.5rem;
-      color: var(--accent-color);
-      margin-bottom: 2rem;
-      animation: glow 2s infinite;
+      margin-bottom: 1.5rem;
+      color: var(--secondary-color);
     }
 
     .countdown {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      font-size: 2rem;
+      gap: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: bold;
     }
 
     .time {
@@ -55,19 +57,35 @@
 
     .label {
       font-size: 1rem;
-      color: #3b82f6; /* sky blue */
-      margin-top: 0.3rem;
+      color: #2563eb;
     }
 
-    @keyframes glow {
-      0%, 100% { text-shadow: 0 0 10px var(--accent-color); }
-      50% { text-shadow: 0 0 20px var(--accent-color); }
+    .decor {
+      position: absolute;
+      z-index: -1;
+    }
+
+    .tree {
+      bottom: 0;
+      left: 0;
+      width: 150px;
+    }
+
+    .floatie {
+      top: 0;
+      right: 0;
+      width: 120px;
     }
   </style>
 </head>
 <body>
+  <!-- Decorative Elements -->
+  <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/63193/palm-trees-clipart-xl.png" class="decor tree" alt="Palm Tree">
+  <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/60904/inflatable-swimming-ring-blue-clipart-xl.png" class="decor floatie" alt="Floatie">
+
   <div class="container">
-    <h1>🌞 Countdown to the Start of School! 🌴</h1>
+    <h1>☀️ Countdown to the First Day of School!
+    </h1>
     <div class="countdown" id="countdown">
       <div class="time">
         <span id="days">0</span>
@@ -95,7 +113,7 @@
       const distance = endDate - now;
 
       if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "🌅 Summer's Over 😢";
+        document.getElementById("countdown").innerHTML = "🌇 Summer's Over 😢";
         return;
       }
 
@@ -104,15 +122,13 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      document.getElementById('days').textContent = days;
-      document.getElementById('hours').textContent = hours;
-      document.getElementById('minutes').textContent = minutes;
-      document.getElementById('seconds').textContent = seconds;
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
     };
 
-    countdown();
     setInterval(countdown, 1000);
   </script>
 </body>
 </html>
-
