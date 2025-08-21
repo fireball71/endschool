@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Graduation Countdown</title>
+  <title>End of School Countdown</title>
   <style>
     :root {
       --primary-color: #9333ea; /* purple */
       --secondary-color: #facc15; /* gold */
-      --background-color: #1e1b4b; /* dark indigo */
       --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
@@ -16,8 +15,9 @@
       margin: 0;
       padding: 0;
       font-family: var(--font-family);
-      background: url('https://images.unsplash.com/photo-1609705025039-3ebfae32e49d?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
-      background-size: cover;
+      background: linear-gradient(135deg, #9333ea, #3b82f6, #facc15);
+      background-size: 400% 400%;
+      animation: gradientShift 12s ease infinite;
       color: #fff;
       display: flex;
       align-items: center;
@@ -25,13 +25,19 @@
       height: 100vh;
     }
 
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .container {
-      background-color: rgba(30, 27, 75, 0.9);
-      color: #facc15;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: var(--secondary-color);
       padding: 3rem;
       border-radius: 1.5rem;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
       max-width: 550px;
     }
 
@@ -57,34 +63,13 @@
 
     .label {
       font-size: 1rem;
-      color: var(--secondary-color);
-    }
-
-    .decor {
-      position: absolute;
-      z-index: -1;
-    }
-
-    .cap {
-      top: 20px;
-      left: 20px;
-      width: 100px;
-    }
-
-    .scroll {
-      bottom: 20px;
-      right: 20px;
-      width: 100px;
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <!-- Decorative Elements -->
-  <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/35230/graduation-cap-clipart-md.png" class="decor cap" alt="Graduation Cap">
-  <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/11922/diploma-scroll-clipart-md.png" class="decor scroll" alt="Diploma Scroll">
-
   <div class="container">
-    <h1>Schools Over!</h1>
+    <h1>End of School Countdown</h1>
     <div class="countdown" id="countdown">
       <div class="time">
         <span id="days">0</span>
@@ -112,7 +97,7 @@
       const distance = endDate - now;
 
       if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "🎉 Congratulations, Graduation Day is Here! 🎓";
+        document.getElementById("countdown").innerHTML = "🎉 Schools Over! 🎓";
         return;
       }
 
