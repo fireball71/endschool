@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Summer Countdown</title>
+  <title>Graduation Countdown</title>
   <style>
     :root {
-      --primary-color: #34d399; /* teal */
-      --secondary-color: #3b82f6; /* blue */
-      --background-color: #fff;
+      --primary-color: #9333ea; /* purple */
+      --secondary-color: #facc15; /* gold */
+      --background-color: #1e1b4b; /* dark indigo */
       --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
@@ -16,7 +16,7 @@
       margin: 0;
       padding: 0;
       font-family: var(--font-family);
-      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1609705025039-3ebfae32e49d?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
       display: flex;
@@ -26,13 +26,13 @@
     }
 
     .container {
-      background-color: rgba(255, 255, 255, 0.9);
-      color: #1e3a8a;
+      background-color: rgba(30, 27, 75, 0.9);
+      color: #facc15;
       padding: 3rem;
       border-radius: 1.5rem;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      max-width: 500px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      max-width: 550px;
     }
 
     h1 {
@@ -44,7 +44,7 @@
     .countdown {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 2rem;
       font-size: 1.8rem;
       font-weight: bold;
     }
@@ -57,7 +57,7 @@
 
     .label {
       font-size: 1rem;
-      color: #2563eb;
+      color: var(--secondary-color);
     }
 
     .decor {
@@ -65,27 +65,26 @@
       z-index: -1;
     }
 
-    .tree {
-      bottom: 0;
-      left: 0;
-      width: 150px;
+    .cap {
+      top: 20px;
+      left: 20px;
+      width: 100px;
     }
 
-    .floatie {
-      top: 0;
-      right: 0;
-      width: 120px;
+    .scroll {
+      bottom: 20px;
+      right: 20px;
+      width: 100px;
     }
   </style>
 </head>
 <body>
   <!-- Decorative Elements -->
-  <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/63193/palm-trees-clipart-xl.png" class="decor tree" alt="Palm Tree">
-  <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/60904/inflatable-swimming-ring-blue-clipart-xl.png" class="decor floatie" alt="Floatie">
+  <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/35230/graduation-cap-clipart-md.png" class="decor cap" alt="Graduation Cap">
+  <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/11922/diploma-scroll-clipart-md.png" class="decor scroll" alt="Diploma Scroll">
 
   <div class="container">
-    <h1>☀️ Countdown to the First Day of School!
-    </h1>
+    <h1>🎓 Countdown to Graduation Day!</h1>
     <div class="countdown" id="countdown">
       <div class="time">
         <span id="days">0</span>
@@ -108,12 +107,12 @@
 
   <script>
     const countdown = () => {
-      const endDate = new Date('August 20, 2025 8:30:00').getTime();
+      const endDate = new Date('June 3, 2026 00:00:00').getTime();
       const now = new Date().getTime();
       const distance = endDate - now;
 
       if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "🌇 Summer's Over 😢";
+        document.getElementById("countdown").innerHTML = "🎉 Congratulations, Graduation Day is Here! 🎓";
         return;
       }
 
